@@ -542,12 +542,10 @@ class WP_Widget_Recent_Posts extends WP_Widget {
 ?>
 		<?php echo $before_widget; ?>
 		<?php if ( $title ) echo $before_title . $title . $after_title; ?>
-		<ul>
 		<?php  while ($r->have_posts()) : $r->the_post(); ?>
-		<li><script type="text/javascript">var url = "<?php the_permalink() ?>";</script><a href="<?php the_permalink() ?>"><?php the_title(); ?></a>  
-<script src="http://api.b.st-hatena.com/entry.count?url=<?php the_permalink() ?>&callback=hatebTxt"></script></li>
+		<script type="text/javascript">var url = "<?php the_permalink() ?>";</script><a href="<?php the_permalink() ?>"><?php the_title(); ?></a>  
+<script src="http://api.b.st-hatena.com/entry.count?url=<?php the_permalink() ?>&callback=hatebTxt"></script>
 		<?php endwhile; ?>
-		</ul>
 		<?php echo $after_widget; ?>
 <?php
 		// Reset the global $the_post as this query will have stomped on it
